@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="razecao">
+    <title>My first line of Js Code</title>
+    <style>
+        p {
+            font-family: sans-serif, '黑体';
+            /*  文字间距 */
+            letter-spacing: 1px;
+            /* 控制文本的大小写 */
+            text-transform: uppercase;
+            /* 设置文本对齐方式 */
+            text-align: center;
+            border: 2px solid rgba(0, 0, 200, 0.6);
+            background: rgba(0, 0, 200, 0.3);
+            color: rgba(0, 0, 200, 0.6);
+            /* 为元素添加阴影，x 偏移量 | y 偏移量 | 阴影模糊半径 | 阴影颜色 */
+            box-shadow: 1px 1px 2px rgba(0, 0, 200, 0.4);
+            border-radius: 10px;
+            padding: 3px 10px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p>玩家1: 小明</p>
+    <button>点我呀</button>
+    <script>
+        const para = document.querySelector('p');
+
+        para.addEventListener('click', updateName);
+
+        function updateName() {
+            let name = prompt('输入一个新的名字: ');
+            para.textContent = '玩家 1: ' + name;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            function createParagraph() {
+                let para1 = document.createElement('p');
+                para1.textContent = '你点了这个按钮! ';
+                document.body.appendChild(para1);
+            }
+
+            const buttons = document.querySelectorAll('button');
+
+            for(let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', createParagraph);
+            }
+        })
+
+    </script>
+</body>
+
+</html>
